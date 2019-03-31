@@ -9,6 +9,9 @@
 ```bash
 npm install --save react-card-preview
 ```
+```bash
+yarn add react-card-preview
+```
 
 ## Usage
 
@@ -21,7 +24,7 @@ class MyComponent extends React.Component {
     return (
       <ReactCardPreview
         name="Tom Jones"
-        brand="mastercard"
+        type="mastercard"
         expiry="11/23"
         cvc="112"
         lastFourDigits="4242"
@@ -31,8 +34,26 @@ class MyComponent extends React.Component {
 }
 ```
 ## Props
+| value  | default  |  description |
+|---|---|---|
+| name  | -  | Card holder name  |
+| type  |  unknown  | Credit card brand * see Card Types  |
+| expiry  | -  | Date string (MM/YY) |
+| cvc  | -  |  Card cvc |
+| lastFourDigits  | -  |   |
 
-
+## Card Types
+* visa
+* mastercard
+* amex
+* discover
+* jcb
+* dinersclub
+* maestro
+* laser
+* unionpay
+* elo
+* hipercard
 
 ## License
 
