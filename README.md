@@ -1,8 +1,16 @@
 # react-card-preview
 
+[![NPM](https://img.shields.io/npm/v/react-card-preview.svg)](https://www.npmjs.com/package/react-card-preview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 > React credit card preview component
 
-[![NPM](https://img.shields.io/npm/v/react-card-preview.svg)](https://www.npmjs.com/package/react-card-preview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+View only component extracted from [amarofashion/react-credit-cards](https://github.com/amarofashion/react-credit-cards) package.  Please use original package for full functionality.
+
+<img src="https://i.ibb.co/CH0Htq5/sample-1.png" height="120" />
+<img src="https://i.ibb.co/DK0Z3D1/sample-2.png" height="120" />
+<img src="https://i.ibb.co/gwPWww2/sample-3.png" height="120" />
+
+
 
 ## Install
 
