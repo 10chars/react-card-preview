@@ -15,6 +15,7 @@ blocks:
           - nvm use
           - node --version
           - npm --version
+          - npm i -g cross-env
       jobs:
       - name: Install dependencies
         commands:
