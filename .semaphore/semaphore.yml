@@ -19,7 +19,9 @@ blocks:
       jobs:
       - name: Install dependencies
         commands:
+          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
           - npm ci
+          - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json) node_modules
 
   - name: "Integration tests"
     task:
@@ -29,10 +31,10 @@ blocks:
           - nvm use
           - node --version
           - npm --version
-          - npm i -g cross-env
       jobs:
       - name: Test
         commands:
+          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
           - npm test
 
   - name: "Build"
@@ -46,5 +48,6 @@ blocks:
       jobs:
       - name: Build
         commands:
+          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
           - npm run build
           - echo "Done!"
