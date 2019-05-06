@@ -5,20 +5,16 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 
-prologue:
-  commands:
-    # Get the latest version of our source code from GitHub:
-    - checkout
-
-    # Use the version of Node.js specified in .nvmrc.
-    # Semaphore provides nvm preinstalled.
-    - nvm use
-    - node --version
-    - npm --version
 
 blocks:
   - name: "Preparation"
     task:
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
       jobs:
       - name: Install dependencies
         commands:
@@ -26,6 +22,12 @@ blocks:
 
   - name: "Integration tests"
     task:
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
       jobs:
       - name: Test
         commands:
@@ -33,6 +35,12 @@ blocks:
 
   - name: "Build"
     task:
+      prologue:
+        commands:
+          - checkout
+          - nvm use
+          - node --version
+          - npm --version
       jobs:
       - name: Build
         commands:
